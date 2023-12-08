@@ -1,9 +1,9 @@
-FROM ubuntu:latest
+FROM fedora:latest
 
 LABEL maintainer="ramankms767@gmail.com"
 
-RUN sed -i 's/$releasever/8/g' /etc/yum.repos.d/CentOS-*.repo && \
-    yum install -y httpd zip unzip
+RUN dnf -y install httpd zip unzip && \
+    dnf clean all
 
 # Download and extract the zip file
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
