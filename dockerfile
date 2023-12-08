@@ -1,10 +1,9 @@
 FROM centos:latest
 
-MAINTAINER ramankms767@gmail.com
+LABEL maintainer="ramankms767@gmail.com"
 
 RUN sed -i 's/$releasever/8/g' /etc/yum.repos.d/CentOS-*.repo && \
     yum install -y httpd zip unzip
-
 
 # Download and extract the zip file
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
